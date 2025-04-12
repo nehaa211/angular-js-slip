@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"> </script>
+</head>
+
+<body ng-app="myapp" ng-controller="ctr">
+    <table>
+        <tr>
+            <td>Enter Name</td>
+            <td>
+                <input type="text" ng-model="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Enter address</td>
+            <td>
+                <input type="text" ng-model="adr">
+            </td>
+        </tr>
+        <tr>
+            <td>Enter contect No</td>
+            <td>
+                <input type="text" ng-model="cno">
+            </td>
+        </tr>
+        <tr>
+            <td>Enter date booking</td>
+            <td>
+                <input type="date" ng-model="book">
+            </td>
+        </tr>
+        <tr>
+            <td>Enter date of journey</td>
+            <td>
+                <input type="date" ng-model="date">
+            </td>
+        </tr>
+        <tr>
+            <td>Enter station</td>
+            <td>
+                <select name="sta" ng-model=sta>
+                    <option value="pune">pune</option>
+                    <option value="Nasik">Nasik</option>
+                    <option value="mumbai">Mumbai</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter destination</td>
+            <td>
+                <select name="desti" ng-model=desti>
+                    <option value="pune">pune</option>
+                    <option value="Nasik">Nasik</option>
+                    <option value="mumbai">Mumbai</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Gender</td>
+            <td>
+                male <input type="radio" ng-model="ger" name=p value="male">
+
+                Female <input type="radio" ng-model="ger" name=p value="female">
+            </td>
+        </tr>
+
+
+    </table>
+
+    <hr>
+
+    <h3>click to view ticket <input type="checkbox" ng-model="a"></h3>
+
+    <table border="1" align="center" ng-show="a">
+        <tr>
+            <td>Name</td>
+            <td>
+                {{name}}
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                {{adr}}
+            </td>
+        </tr>
+        <tr>
+            <td>contact No</td>
+            <td>
+                {{cno}}
+            </td>
+        </tr>
+        <tr>
+            <td>date of booking</td>
+            <td>
+                {{book}}
+            </td>
+        </tr>
+        <tr>
+            <td>Date of journey</td>
+            <td>
+                {{date}}
+            </td>
+        </tr>
+        <tr>
+            <td>Station</td>
+            <td>{{sta}} </td>
+        </tr>
+        <tr>
+            <td>destination</td>
+            <td>
+                {{desti}}
+            </td>
+        </tr>
+        <tr>
+
+            <td>Gender</td>
+            <td>{{ger}} </td>
+
+
+        </tr>
+
+    </table>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller('ctr', function ($scope) {
+            $scope.name
+            $scope.adr
+            $scope.cno
+            $scope.desti
+
+            $scope.date
+            $scope.book
+            $scope.sta
+            $scope.ger
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="a.js"></script>
+    <script src="route.js"></script>
+    <style>
+        li{
+            font-style: italic;
+            font-size: medium;
+            width: 40%;
+            background-color: aqua;
+            
+           
+        }
+        ul{
+            border: solid;
+            border-color: black;
+            width: 50%;
+           
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font: size 30px;;
+            width:40%;
+            height: 10%;
+            border-radius: 10%;
+            margin: 2%;
+            padding: 2%;
+            background: rgb(73, 181, 89);
+            color: bisque;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <h2>HISTROICAL PLACESE</h2>
+
+    <p><a href="#/!home!">Main Page</a></p>
+    <ul>
+        <li><a href="#!hm">Hamppi</a><br></li>
+        <li><a href="#!g">Goa</a><br></li>
+        <li><a href="#!na">Nashik</a><br></li>
+    
+        <li><a href="#!se">Saurashtra</a><br></li>
+    </ul>
+        <div ng-view></div>
+        <script type="text/ng-template" id="home.html">
+
+            <h1>THIS IS HOME</h1>
+            
+                       
+             </script>
+        <script type="text/ng-template" id="hamppi.html">
+
+                <h1>THIS IS Hamppi</h1>
+                <h2>{{mess}} </h2>
+                           
+                         </script>
+        <script type="text/ng-template" id="goa.html">
+
+<h1>THIS IS goa</h1>
+<h2>{{mess}} </h2>
+           
+         </script>
+        <script type="text/ng-template" id="nashik.html">
+           <h1>THIS IS nashik</h1>
+   
+         </script>
+
+        </script>
+        <script type="text/ng-template" id="Saurashtra.html">
+          <h1>THIS IS Saurashtra</h1>
+  
+        </script>
+        <script>
+            var app = angular.module("myApp", ["ngRoute"]);
+            app.config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                    .when("/", {
+                        templateUrl: "home.html"
+                    })
+                    .when("/hm", {
+                        templateUrl: "hamppi.html",
+                        // controller: 'jwctr'
+                    })
+                    .when("/g", {
+                        templateUrl: "goa.html",
+                        // controller: 'jwctr'
+                    })
+                    .when("/na", {
+                        templateUrl: "nashik.html"
+                    })
+                    .when("/se", {
+                        templateUrl: "Saurashtra.html"
+                    })
+            }]);
+
+            // myapp.controller('jwctr'(function ($scope) {
+            //     $scope.mess = 'hiiii'
+
+
+
+        </script>
+
+</body>
+
+</html>

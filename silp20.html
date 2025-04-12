@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="ctr">
+    <form action="#" name="stud">
+        <table>
+            <tr>
+                <td>
+                    Name <input type="text" name="name" ng-model="name" ng-pattern="/^[a-zA-Z]*$/" required>
+
+                </td>
+                <td>
+                    <!-- <span style=" color:brown; " ng-show="stud.name.$dirty && stud.name.$invalid">
+
+                    </span> -->
+                    <span ng-show="stud.name.$error.pattern">Name is invalid </span>
+                    <span ng-show="stud.name.$error.required">Name is required </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mobile <input type="number" name="mo" ng-model="mo" ng-pattern="/^[0-9]{10}$/" minlength="10"
+                        maxlength="10" required>
+
+                </td>
+                <td>
+                    <span ng-show="stud.mo.$error.pattern">Mobile is invalid </span>
+                    <span ng-show="stud.mo.$error.required">Mobile is required </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    email<input type="email" name="email" ng-model="email" minlength="10" maxlength="100" required>
+
+                </td>
+                <td>
+                    <span ng-show="stud.email.$error.required">Mobile is required </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Pin code <input type="number" name="pin" ng-model="pin" ng-pattern="/^[0-5]{6}$/" minlength="10"
+                        maxlength="10" required>
+
+                </td>
+                <td>
+                    <span ng-show="stud.pin.$error.pattern">pin code is invalid </span>
+                    <span ng-show="stud.pin.$error.required">pin code is required </span>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    To see details <input type="checkbox" ng-model="a">
+    <div ng-show="a">
+        <h5>{{name}} </h5>
+        <h5>{{mo}} </h5>
+        <h5>{{email}} </h5>
+        <h5>{{pin}} </h5>
+    </div>
+</body>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller('ctr', function ($scope) {
+        $scope.a;
+
+    });
+</script>
+
+</html>

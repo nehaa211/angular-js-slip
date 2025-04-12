@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<script src="angular-route.min.js"></script>
+
+<body ng-app="myApp">
+    <p>SYBBA CA SYLLABUS CBCS 2019 PATTERN"</p>
+
+    <p><a href="#/!home!">Main Page</a></p>
+    <ul>
+        <li><a href="#!dm">Home</a><br></li>
+        <li><a href="#!ds">Managment</a><br></li>
+        <li><a href="#!se">Staff</a><br></li>
+
+        <div ng-view></div>
+        <script type="text/ng-template" id="digitalmarketing.html">
+
+<h1>THIS IS HOME</h1>
+<h2>{{mess}} </h2>
+           
+         </script>
+        <script type="text/ng-template" id="datastructure.html">
+           <h1>THIS IS Management</h1>
+   
+         </script>
+        </script>
+        <script type="text/ng-template" id="softwareengg.html">
+          <h1>THIS IS Management</h1>
+  
+        </script>
+        <script>
+            var app = angular.module("myApp", ["ngRoute"]);
+            app.config(['$routeProvider', function ($routeProvider) {
+                $routeProvider
+                    .when("/", {
+                        templateUrl: "home.html"
+                    })
+                    .when("/dm", {
+                        templateUrl: "digitalmarketing.html",
+                        // controller: 'jwctr'
+                    })
+                    .when("/ds", {
+                        templateUrl: "datastructure.html"
+                    })
+                    .when("/se", {
+                        templateUrl: "softwareengg.html"
+                    })
+            }]);
+
+            // myapp.controller('jwctr'(function ($scope) {
+            //     $scope.mess = 'hiiii'
+
+        
+
+        </script>
+
+</body>
+
+</html>

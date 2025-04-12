@@ -1,0 +1,59 @@
+
+<!-- Write an AngularJS script to display list of games stored in an array on click of button using
+ng-click. And also Demonstrate ng-init, ng-bing directive of AngularJS.
+-->
+
+<html>
+<head>
+    
+    <title>Slip 1</title>
+    <script src="a.js" ></script>
+</head>
+
+<body>
+    <div ng-app="" ng-init="games=['Cricket','football','tennis','kabaddi']; i=0">
+        <b>
+            <h1>Game name : <span ng-bind="games[i]"></span></h1>
+        
+        <button ng-click="i=i+1"> Click Me!! </button></b>
+    </div>
+</body>
+
+</html> 
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="a.js"></script>
+</head>
+
+<body ng-app="mod">
+
+    <div ng-controller="ctr">
+        <button ng-click="myfun()">click
+            <h3 ng-repeat="x in con">
+                {{x}}
+
+            </h3>
+        </button>
+    </div>
+    <script>
+        var app = angular.module("mod", []);
+        app.controller('ctr', function ($scope) {
+            $scope.myfun = function () {
+                $scope.con = ['cricket', 'kho-kho', 'hocky']
+            };
+        }
+
+
+        );
+    </script>
+</body>
+
+</html> -->
